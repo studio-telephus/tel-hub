@@ -9,7 +9,7 @@ jib {
         }
     }
     to {
-        image = "telephus:latest"
+        image = "studiofrancium/tel-hub:latest"
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]
