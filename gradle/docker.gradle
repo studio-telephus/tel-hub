@@ -1,3 +1,10 @@
+ext {
+    image = System.getProperty("jib.to.image")
+    tags = System.getProperty("jib.to.tags")
+    username = System.getProperty("jib.to.auth.username")
+    password = System.getProperty("jib.to.auth.password")
+}
+
 jib {
     from {
         image = "eclipse-temurin:11-jre-focal"
@@ -9,8 +16,8 @@ jib {
         }
     }
     to {
-        image = "studiofrancium/tel-hub"
-        tags = project.provider{[version]}
+        image = ext.image
+        tags = ext.tags
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]
