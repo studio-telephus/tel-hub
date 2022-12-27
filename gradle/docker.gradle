@@ -1,8 +1,8 @@
 ext {
-    image = project.getProperty("jibToImage")
-    tags = project.getProperty("jibToTags")
-    username = project.getProperty("jibToAuthUsername")
-    password = project.getProperty("jibToAuthPassword")
+    image = rootProject.getProperty("jibToImage")
+    tags = rootProject.getProperty("jibToTags")
+    username = rootProject.getProperty("jibToAuthUsername")
+    password = rootProject.getProperty("jibToAuthPassword")
 }
 
 jib {
