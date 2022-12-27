@@ -1,9 +1,4 @@
-def jibToImage = System.getenv("JIB_TO_IMAGE")
-println 'jibToImage value is ${jibToImage}'
-def jibToTags = System.getenv("JIB_TO_TAGS").split(',')
-println 'jibToTags value is ${jibToTags}'
-def jibToAuthUsername = System.getenv("JIB_TO_AUTH_USERNAME")
-def jibToAuthPassword = System.getenv("JIB_TO_AUTH_PASSWORD")
+
 
 jib {
     from {
@@ -16,6 +11,11 @@ jib {
         }
     }
     to {
+        def jibToImage = System.getenv("JIB_TO_IMAGE")
+        def jibToTags = System.getenv("JIB_TO_TAGS").split(',')
+        def jibToAuthUsername = System.getenv("JIB_TO_AUTH_USERNAME")
+        def jibToAuthPassword = System.getenv("JIB_TO_AUTH_PASSWORD")
+        
         image = jibToImage
         tags = jibToTags
         auth {
