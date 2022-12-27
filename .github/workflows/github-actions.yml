@@ -44,8 +44,8 @@ jobs:
       - name: Docker build & push
         run: ./gradlew \
           -Pprod \
-          -Djib.to.image=studiofrancium/tel-hub \
-          -Djib.to.tags=latest \
-          -Djib.to.auth.username=${{ secrets.DOCKER_USERNAME }} \
-          -Djib.to.auth.password=${{ secrets.DOCKER_PASSWORD }} \
+          -PjibToImage=studiofrancium/tel-hub \
+          -PjibToTags=latest \
+          -PjibToAuthUsername=${{ secrets.DOCKER_USERNAME }} \
+          -PjibToAuthPassword=${{ secrets.DOCKER_PASSWORD }} \
           bootJar jib

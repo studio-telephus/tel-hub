@@ -1,3 +1,10 @@
+ext {
+    image = project.getProperty("jibToImage")
+    tags = project.getProperty("jibToTags")
+    username = project.getProperty("jibToAuthUsername")
+    password = project.getProperty("jibToAuthPassword")
+}
+
 jib {
     from {
         image = "eclipse-temurin:11-jre-focal"
@@ -9,11 +16,11 @@ jib {
         }
     }
     to {
-        image = System.getProperty("jib.to.image")
-        tags = System.getProperty("jib.to.tags")
+        image = image
+        tags = tags
         auth {
-            username = System.getProperty("jib.to.auth.username")
-            password = System.getProperty("jib.to.auth.password")
+            username = username
+            password = password
         }
     }
     container {
