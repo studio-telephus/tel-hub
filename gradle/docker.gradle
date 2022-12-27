@@ -18,6 +18,10 @@ jib {
     to {
         image = image
         tags = tags
+        auth {
+            username = username
+            password = password
+        }
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]
