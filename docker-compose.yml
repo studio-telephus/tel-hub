@@ -4,5 +4,9 @@ services:
   hub:
     image: studiofrancium/tel-hub:latest
     container_name: hub-cnt
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=dev,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
     ports:
       - "8080:8080"

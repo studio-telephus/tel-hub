@@ -1,5 +1,5 @@
 def jibToImage = System.getenv("JIB_TO_IMAGE")
-def jibToTags = System.getenv("JIB_TO_TAGS")
+def jibToTags = System.getenv("JIB_TO_TAGS").split(',')
 def jibToAuthUsername = System.getenv("JIB_TO_AUTH_USERNAME")
 def jibToAuthPassword = System.getenv("JIB_TO_AUTH_PASSWORD")
 
