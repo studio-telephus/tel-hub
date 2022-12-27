@@ -1,9 +1,7 @@
-ext {
-    image = rootProject.getProperty("jibToImage")
-    tags = rootProject.getProperty("jibToTags")
-    username = rootProject.getProperty("jibToAuthUsername")
-    password = rootProject.getProperty("jibToAuthPassword")
-}
+def image = System.getenv("JIB_TO_IMAGE")
+def tags = System.getenv("JIB_TO_TAGS")
+def username = System.getenv("JIB_TO_AUTH_USERNAME")
+def password = System.getenv("JIB_TO_AUTH_PASSWORD")
 
 jib {
     from {

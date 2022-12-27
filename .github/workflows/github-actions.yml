@@ -42,10 +42,9 @@ jobs:
 #      - name: 'E2E: Teardown'
 #        run: npm run ci:e2e:teardown
       - name: Docker build & push
-        run: ./gradlew \
-          -Pprod \
-          -PjibToImage=studiofrancium/tel-hub \
-          -PjibToTags=latest \
-          -PjibToAuthUsername=${{ secrets.DOCKER_USERNAME }} \
-          -PjibToAuthPassword=${{ secrets.DOCKER_PASSWORD }} \
-          bootJar jib
+        run: ./gradlew -Pprod bootJar jib
+        env:
+          JIB_TO_IMAGE: studiofrancium/tel-hub
+          JIB_TO_TAGS: latest
+          JIB_TO_AUTH_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          JIB_TO_AUTH_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
