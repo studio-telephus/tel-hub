@@ -9,7 +9,8 @@ jib {
         }
     }
     to {
-        image = "studiofrancium/tel-hub:latest"
+        image = "studiofrancium/tel-hub"
+        tags = project.provider{[version]}
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]
