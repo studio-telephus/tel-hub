@@ -15,9 +15,9 @@ jib {
         def jibToTags = System.getenv("JIB_TO_TAGS").split(',')
         def jibToAuthUsername = System.getenv("JIB_TO_AUTH_USERNAME")
         def jibToAuthPassword = System.getenv("JIB_TO_AUTH_PASSWORD")
-        
+
         image = jibToImage
-        tags = jibToTags
+        tags = ["latest"]
         auth {
             username = jibToAuthUsername
             password = jibToAuthPassword
