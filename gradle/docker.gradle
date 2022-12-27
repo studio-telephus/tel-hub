@@ -1,7 +1,7 @@
-def image = System.getenv("JIB_TO_IMAGE")
-def tags = System.getenv("JIB_TO_TAGS")
-def username = System.getenv("JIB_TO_AUTH_USERNAME")
-def password = System.getenv("JIB_TO_AUTH_PASSWORD")
+def jibToImage = System.getenv("JIB_TO_IMAGE")
+def jibToTags = System.getenv("JIB_TO_TAGS")
+def jibToAuthUsername = System.getenv("JIB_TO_AUTH_USERNAME")
+def jibToAuthPassword = System.getenv("JIB_TO_AUTH_PASSWORD")
 
 jib {
     from {
@@ -14,11 +14,11 @@ jib {
         }
     }
     to {
-        image = image
-        tags = tags
+        image = jibToImage
+        tags = jibToTags
         auth {
-            username = username
-            password = password
+            username = jibToAuthUsername
+            password = jibToAuthPassword
         }
     }
     container {

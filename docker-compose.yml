@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  hub:
+    image: studiofrancium/tel-hub:latest
+    container_name: hub-cnt
+    ports:
+      - "8080:8080"
